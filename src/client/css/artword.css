@@ -1,0 +1,9 @@
+#artWordContainer > .canvas-container {
+  position: relative !important;
+  display: block !important;
+}
+#artWordContainer{
+  position: relative;
+  width: 100%;
+  height: 347px;
+}

@@ -1,0 +1,314 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css");
+@import "upLoadFile.css"; 
+@import "artword.css"; 
+@import "gallery.css"; 
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVc.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVc.ttf)
+    format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.btn {
+  cursor: pointer;
+}
+input,
+select {
+  border: 1px solid #e3e2e3;
+}
+input:focus,
+select:focus {
+  border: none;
+}
+.container {
+  background: #00000070;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialog-container {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.row-content {
+  width: 95%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.tool-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+.two-d,.three-d  {
+  border: 1px solid black;
+}
+.button-group {
+  display: flex;
+  width: 95%;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+.btn-save {
+  border: 1px solid #6cad8f;
+  color: #6cad8f;
+}
+.btn-reset {
+  border: 1px solid #deaa69;
+  color: #deaa69;
+}
+#colorPicker {
+  width: 100%;
+}
+button.apply-all {
+  width: 100%;
+  background: white;
+  border: 1px solid #9d9c9d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.color-input-container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+.text {
+  margin-bottom: 10px;
+}
+.img-output {
+  width: 100px;
+}
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+.click-to-upload {
+  cursor: pointer;
+}
+.click-to-upload:hover {
+  color: blue;
+}
+.upload-file {
+  overflow: hidden;
+}
+.select-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(auto, auto);
+}
+.text-color-picker {
+  width: 100%;
+}
+select#font-select {
+  height: 27px;
+  width: 100%;
+}
+select#size-select {
+  width: 100%;
+  height: 27px;
+}
+.text-input {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 10px 0px;
+}
+#text-input {
+  padding: 5px;
+  width: 100%;
+}
+.add-button,
+.delete-button {
+  padding: 5px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  align-items: center;
+}
+.add-button {
+  border: 1px solid #6cad8f;
+  color: #6cad8f;
+}
+.delete-button {
+  border: 1px solid #deaa69;
+  color: #deaa69;
+}
+.close-button {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 30px;
+  height: 30px;
+  background: black;
+  color: white;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.radio-group {
+  display: flex;
+  justify-content: flex-end;
+  width: 95%;
+  padding-top: 20px;
+  gap: 10%;
+}
+.radio-item label {
+  cursor: pointer;
+}
+.radio-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+/* .sidebar */
+
+.sidebar-toggle {
+  margin-left: -240px;
+}
+.sidebar {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
+  z-index: 100;
+  left: 0;
+}
+.sidebar #leftside-navigation ul,
+.sidebar #leftside-navigation ul ul {
+  margin: -2px 0 0;
+  padding: 0;
+}
+.sidebar #leftside-navigation ul li {
+  list-style-type: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.sidebar #leftside-navigation ul li.active > a {
+  color: #1abc9c;
+}
+.sidebar #leftside-navigation ul li.active ul {
+  display: block;
+}
+.sidebar #leftside-navigation ul li a,.header-sub-menu {
+  color: #000;
+  background-color: #edeced;
+  text-decoration: none;
+  display: block;
+  padding: 18px 0 18px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  outline: 0;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  border-radius: 10px;
+}
+.header-sub-menu{
+
+}
+.sub-menu-with-tool ul li {
+  padding-top: 20px;
+}
+.sidebar #leftside-navigation ul li a:hover {
+  color: #fff;
+  background-color: #2b96f5;
+}
+.sidebar #leftside-navigation ul li a span {
+  display: inline-block;
+}
+.sidebar #leftside-navigation ul li a i {
+  width: 20px;
+}
+.sidebar #leftside-navigation ul li a i .fa-angle-left,
+.sidebar #leftside-navigation ul li a i .fa-angle-right {
+  padding-top: 3px;
+}
+.sidebar #leftside-navigation ul ul {
+  display: none;
+}
+.sidebar #leftside-navigation ul ul li {
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: none;
+  padding: 10px;
+}
+.sidebar #leftside-navigation ul ul li a {
+  font-size: 12px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  color: #aeb2b7;
+}
+
+.two-d {
+  position: relative;
+}
+
+.sub-menu-with-tool{
+  position: absolute;
+  right: -2000px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.arrow.fa.fa-angle-right{
+  width: 20px;
+}
